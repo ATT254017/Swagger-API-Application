@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "swaggertest.fullname" . }}
+  labels:
+    app: {{ template "swaggertest.name" . }}
+    chart: {{ template "swaggertest.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "swaggertest.name" . }}
+    release: {{ .Release.Name }}

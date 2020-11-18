@@ -1,0 +1,14 @@
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\appsettings.Development.json
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\appsettings.json
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Properties\launchSettings.json
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\SwaggerTest.exe
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\SwaggerTest.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\SharpSnmpLib.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\SwaggerTest.pdb
+C:\Users\liviu\source\repos\SwaggerTest\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\liviu\source\repos\SwaggerTest\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\liviu\source\repos\SwaggerTest\obj\Debug\docker-compose.dcproj.CopyComplete

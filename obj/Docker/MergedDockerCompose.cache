@@ -1,0 +1,16 @@
+services:
+  swaggertest:
+    build:
+      context: C:\Users\liviu\source\repos\SwaggerTest
+      dockerfile: SwaggerTest/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: swaggertest
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\liviu\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\liviu\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
