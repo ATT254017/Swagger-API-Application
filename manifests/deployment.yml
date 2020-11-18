@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetesserver-0c8d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetesserver-0c8d"
+  template:
+    metadata:
+      labels:
+        app: "kubernetesserver-0c8d"
+    spec:
+      containers:
+        - name: "kubernetesserver-0c8d"
+          image: "akangular.azurecr.io/kubernetesserver"
+          ports:
+          - containerPort: 80
