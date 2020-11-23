@@ -20,7 +20,28 @@ namespace SwaggerTest.Controllers
             _logger = logger;
         }
 
-        [HttpGet("variables/{id}")]
+        //values
+        [HttpGet]
+        public ValuesModel Get()
+        {
+            var id = 1;
+            var result = new ValuesModel();
+            var url = MicrocontrollerMap.IpMapId.GetValueOrDefault(id);
+            if (!String.IsNullOrEmpty(url))
+            {
+                result.MicrocontrollerID = id;
+                result.Temperature = GetTemperature(url);
+                result.DoorOpen = GetDoorOpen(url);
+                result.Dust = GetDust(url);
+                result.DateTime = DateTime.Now;
+                result.Humidity = GetHumidity(url);
+                result.Power = GetPower(url);
+            }
+            return result;
+        }
+
+        //values/1
+        [HttpGet("{id}")]
         public ValuesModel Get(int id)
         {
             var result = new ValuesModel();
@@ -44,7 +65,7 @@ namespace SwaggerTest.Controllers
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
                            new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.1")) },
-                           30000)[0].Data?.ToString();
+                           3000)[0].Data?.ToString();
             var result = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
             return result;
         }
@@ -55,7 +76,7 @@ namespace SwaggerTest.Controllers
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
                            new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.3")) },
-                           30000)[0].Data?.ToString();
+                           3000)[0].Data?.ToString();
             var result = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
             return result;
         }
@@ -66,7 +87,7 @@ namespace SwaggerTest.Controllers
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
                            new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.2")) },
-                           30000)[0].Data?.ToString();
+                           3000)[0].Data?.ToString();
             var result = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
             return result;
         }
@@ -77,7 +98,7 @@ namespace SwaggerTest.Controllers
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
                            new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.4")) },
-                           30000)[0].Data?.ToString();
+                           3000)[0].Data?.ToString();
             var temp = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
             var result = true;
             if (temp == 0) result = false;
@@ -90,7 +111,7 @@ namespace SwaggerTest.Controllers
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
                            new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.5")) },
-                           30000)[0].Data?.ToString();
+                           3000)[0].Data?.ToString();
             var result = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
             return result;
         }

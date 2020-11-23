@@ -20,20 +20,28 @@ namespace SwaggerTest
         {
             services.AddControllers();
 
-            services.AddSwaggerGen();
-
             services.AddCors();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.DocInclusionPredicate((docName, apiDesc) =>
+                {
+                    if (apiDesc.HttpMethod == null) return false;
+                    return true;
+                });
+
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Microcontroller calls api",
+                    Description = "API for calling data from the microcontroller",
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -54,6 +62,9 @@ namespace SwaggerTest
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Microcontroller values API"); });
         }
     }
 }
