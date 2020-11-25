@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Net;
 using Lextm.SharpSnmpLib;
 using Lextm.SharpSnmpLib.Messaging;
@@ -59,36 +60,36 @@ namespace SwaggerTest.Controllers
             return result;
         }
 
-        public int GetTemperature(string url)
+        public float GetTemperature(string url)
         {
             var response = Messenger.Get(VersionCode.V1,
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
-                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.1")) },
+                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.2.1.1.8.0")) },
                            3000)[0].Data?.ToString();
-            var result = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
+            var result = !String.IsNullOrEmpty(response) ? float.Parse(response, CultureInfo.InvariantCulture.NumberFormat) : 0;
             return result;
         }
 
-        public int GetDust(string url)
+        public float GetDust(string url)
         {
             var response = Messenger.Get(VersionCode.V1,
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
-                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.3")) },
+                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.2.1.1.10.0")) },
                            3000)[0].Data?.ToString();
-            var result = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
+            var result = !String.IsNullOrEmpty(response) ? float.Parse(response, CultureInfo.InvariantCulture.NumberFormat) : 0;
             return result;
         }
 
-        public int GetHumidity(string url)
+        public float GetHumidity(string url)
         {
             var response = Messenger.Get(VersionCode.V1,
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
-                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.2")) },
+                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.2.1.1.11.0")) },
                            3000)[0].Data?.ToString();
-            var result = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
+            var result = !String.IsNullOrEmpty(response) ? float.Parse(response, CultureInfo.InvariantCulture.NumberFormat) : 0;
             return result;
         }
 
@@ -97,7 +98,7 @@ namespace SwaggerTest.Controllers
             var response = Messenger.Get(VersionCode.V1,
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
-                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.4")) },
+                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.4.1.318.1.1.1.2.2.1.0")) },
                            3000)[0].Data?.ToString();
             var temp = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
             var result = true;
@@ -105,14 +106,14 @@ namespace SwaggerTest.Controllers
             return result;
         }
 
-        public int GetPower(string url)
+        public float GetPower(string url)
         {
             var response = Messenger.Get(VersionCode.V1,
                            new IPEndPoint(IPAddress.Parse(url), 161),
                            new OctetString("public"),
-                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.3.2016.5.1.5")) },
+                           new List<Variable> { new Variable(new ObjectIdentifier("1.3.6.1.2.1.1.9.0")) },
                            3000)[0].Data?.ToString();
-            var result = !String.IsNullOrEmpty(response) ? Int32.Parse(response) : 0;
+            var result = !String.IsNullOrEmpty(response) ? float.Parse(response, CultureInfo.InvariantCulture.NumberFormat) : 0;
             return result;
         }
     }

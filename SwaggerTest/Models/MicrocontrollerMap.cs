@@ -8,7 +8,7 @@ namespace SwaggerTest.Models
             new Dictionary<int, string>() 
             {
                 {1, "192.168.20.6" },
-                {2, "192.168.20.6" }
+                {2, "192.168.1.177" }
             };
     }
 }

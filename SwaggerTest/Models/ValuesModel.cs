@@ -6,10 +6,10 @@ namespace SwaggerTest.Models
     {
         public DateTime DateTime { get; set; }
         public int MicrocontrollerID { get; set; }
-        public int Temperature { get; set; }
-        public int Humidity { get; set; }
-        public int Dust { get; set; }
+        public float Temperature { get; set; }
+        public float Humidity { get; set; }
+        public float Dust { get; set; }
         public bool DoorOpen { get; set; }
-        public int Power { get; set; }
+        public float Power { get; set; }
     }
 }
