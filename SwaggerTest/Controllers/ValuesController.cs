@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Net;
 using Lextm.SharpSnmpLib;
 using Lextm.SharpSnmpLib.Messaging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SwaggerTest.DAL;
 using SwaggerTest.Models;
 
 namespace SwaggerTest.Controllers
@@ -15,10 +17,12 @@ namespace SwaggerTest.Controllers
     public class ValuesController : ControllerBase
     {
         private readonly ILogger<ValuesController> _logger;
+        private readonly DataAccessContext _context;
 
-        public ValuesController(ILogger<ValuesController> logger)
+        public ValuesController(ILogger<ValuesController> logger, DataAccessContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         //values
@@ -26,18 +30,10 @@ namespace SwaggerTest.Controllers
         public ValuesModel Get()
         {
             var id = 1;
-            var result = new ValuesModel();
-            var url = MicrocontrollerMap.IpMapId.GetValueOrDefault(id);
-            if (!String.IsNullOrEmpty(url))
-            {
-                result.MicrocontrollerID = id;
-                result.Temperature = GetTemperature(url);
-                result.DoorOpen = GetDoorOpen(url);
-                result.Dust = GetDust(url);
-                result.DateTime = DateTime.Now;
-                result.Humidity = GetHumidity(url);
-                result.Power = GetPower(url);
-            }
+            var result = _context.ValuesModels
+                .Where(p => p.MicrocontrollerID == id)
+                .OrderBy(d => d.DateTime)
+                .LastOrDefault();
             return result;
         }
 
@@ -45,18 +41,10 @@ namespace SwaggerTest.Controllers
         [HttpGet("{id}")]
         public ValuesModel Get(int id)
         {
-            var result = new ValuesModel();
-            var url = MicrocontrollerMap.IpMapId.GetValueOrDefault(id);
-            if (!String.IsNullOrEmpty(url))
-            {
-                result.MicrocontrollerID = id;
-                result.Temperature = GetTemperature(url);
-                result.DoorOpen = GetDoorOpen(url);
-                result.Dust = GetDust(url);
-                result.DateTime = DateTime.Now;
-                result.Humidity = GetHumidity(url);
-                result.Power = GetPower(url);
-            }
+            var result = _context.ValuesModels
+                .Where(p => p.MicrocontrollerID == id)
+                .OrderBy(d => d.DateTime)
+                .LastOrDefault();
             return result;
         }
 

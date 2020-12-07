@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SwaggerTest.DAL;
 
 namespace SwaggerTest
 {
@@ -37,6 +39,8 @@ namespace SwaggerTest
                     Description = "API for calling data from the microcontroller",
                 });
             });
+
+            services.AddDbContext<DataAccessContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=MicrocontrollerDataDB;Integrated Security=True"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +52,7 @@ namespace SwaggerTest
             }
 
             app.UseCors(options =>
-            options.WithOrigins("http://localhost:9000")
+            options.WithOrigins("http://localhost:4200")
             .AllowAnyMethod()
             .AllowAnyHeader());
 

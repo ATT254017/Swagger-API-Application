@@ -1,9 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace SwaggerTest.Models
 {
     public class ValuesModel
     {
+        [Key]
+        public int Id { get; set; }
         public DateTime DateTime { get; set; }
         public int MicrocontrollerID { get; set; }
         public float Temperature { get; set; }
