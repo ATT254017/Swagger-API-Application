@@ -48,6 +48,18 @@ namespace SwaggerTest.Controllers
             return result;
         }
 
+        //values/1
+        [HttpGet("data/{id}")]
+        public IEnumerable<ValuesModel> GetLast(int id)
+        {
+            var result = _context.ValuesModels
+                .Where(p => p.MicrocontrollerID == id)
+                .OrderBy(d => d.DateTime)
+                .Reverse().Take(15)
+                .OrderBy(d => d.DateTime);
+            return result;
+        }
+
         public float GetTemperature(string url)
         {
             var response = Messenger.Get(VersionCode.V1,
