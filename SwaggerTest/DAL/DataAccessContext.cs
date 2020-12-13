@@ -14,6 +14,6 @@ namespace SwaggerTest.DAL
         {
         }
         public DbSet<ValuesModel> ValuesModels { get; set; }
-
+        public DbSet<NotificationModel> NotificationsModel { get; set; }
     }
 }
