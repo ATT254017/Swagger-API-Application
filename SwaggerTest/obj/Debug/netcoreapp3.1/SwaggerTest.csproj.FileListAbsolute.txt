@@ -1,6 +1,5 @@
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\SwaggerTest.exe
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\obj\Debug\netcoreapp3.1\SwaggerTest.csprojAssemblyReference.cache
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\obj\Debug\netcoreapp3.1\SwaggerTest.AssemblyInfoInputs.cache
@@ -18,10 +17,7 @@ C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\Swag
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\SwaggerTest.runtimeconfig.dev.json
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\SwaggerTest.dll
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\SwaggerTest.pdb
-C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
-C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\Swashbuckle.Core.dll
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\obj\Debug\netcoreapp3.1\SwaggerTest.dll
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\obj\Debug\netcoreapp3.1\SwaggerTest.pdb
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\obj\Debug\netcoreapp3.1\SwaggerTest.genruntimeconfig.cache
@@ -81,3 +77,5 @@ C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\runt
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\liviu\source\repos\SwaggerTest\SwaggerTest\obj\Debug\netcoreapp3.1\scopedcss\bundle\SwaggerTest.styles.css

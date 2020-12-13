@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SwaggerTest.DAL;
+using SwaggerTest.Helpers;
+using SwaggerTest.Services;
 
 namespace SwaggerTest
 {
@@ -23,6 +25,13 @@ namespace SwaggerTest
             services.AddControllers();
 
             services.AddCors();
+
+
+            // configure strongly typed settings object
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
+            // configure DI for application services
+            services.AddScoped<IUserService, UserService>();
 
             services.AddSwaggerGen(c =>
             {
@@ -66,6 +75,9 @@ namespace SwaggerTest
             {
                 endpoints.MapControllers();
             });
+
+            // custom jwt auth middleware
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Microcontroller values API"); });
