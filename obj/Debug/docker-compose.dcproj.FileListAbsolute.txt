@@ -1,6 +1,5 @@
 C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\appsettings.Development.json
 C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\appsettings.json
-C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Properties\launchSettings.json
 C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\SwaggerTest.exe
 C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\SwaggerTest.dll
 C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -28,3 +27,7 @@ C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Microsoft.Extensions.Logging.d
 C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\liviu\source\repos\SwaggerTest\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll

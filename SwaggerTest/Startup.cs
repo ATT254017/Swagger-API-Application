@@ -49,7 +49,7 @@ namespace SwaggerTest
                 });
             });
 
-            services.AddDbContext<DataAccessContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=MicrocontrollerDataDB;Integrated Security=True"));
+            services.AddDbContext<DataAccessContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=MicrocontrollerDatabase;Integrated Security=True"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

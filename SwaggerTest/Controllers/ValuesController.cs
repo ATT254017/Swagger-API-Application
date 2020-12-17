@@ -56,7 +56,7 @@ namespace SwaggerTest.Controllers
             var result = _context.ValuesModels
                 .Where(p => p.MicrocontrollerID == id)
                 .OrderBy(d => d.DateTime)
-                .Reverse().Take(20)
+                .Reverse().Take(60)
                 .OrderBy(d => d.DateTime);
             return result;
         }
@@ -64,9 +64,16 @@ namespace SwaggerTest.Controllers
         [HttpPost("notification")]
         public async Task<IActionResult> PostNotificationMessage([FromBody] NotificationModel notification)
         {
-            _context.NotificationsModel.Add(notification);
+            _context.NotificationModels.Add(notification);
             await _context.SaveChangesAsync();
             return Ok(true);
+        }
+
+        [HttpGet("notification")]
+        public IEnumerable<NotificationModel> GetNotificationMessage()
+        {
+            var result = _context.NotificationModels.ToList();
+            return result;
         }
     }
 }
